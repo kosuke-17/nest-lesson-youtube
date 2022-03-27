@@ -23,8 +23,8 @@ export class UsersService {
     return await this.userModel.find({});
   }
   // 特定のユーザー情報の取得
-  // async findOne(username: string) {
-  //   const user = await this.userModel.findOne({ username });
-  //   return user;
-  // }
+  async findOne(username: string) {
+    const user = await this.userModel.findOne({ username });
+    return user;
+  }
 }
