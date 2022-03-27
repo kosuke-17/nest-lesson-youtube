@@ -1,5 +1,12 @@
+import { IsString, MaxLength, MinLength } from 'class-validator';
 // クラスの方がバリデーションが便利
 export class CreateUserDto {
-  readonly usernaem: string;
+  @IsString()
+  @MinLength(1)
+  @MaxLength(20)
+  readonly username: string;
+  @IsString()
+  @MinLength(8)
+  @MaxLength(20)
   readonly pasword: string;
 }

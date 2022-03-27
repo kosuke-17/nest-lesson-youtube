@@ -24,3 +24,7 @@ nest g service users
 
 デザインパターンの一つ
 クライアントから受け取るデータの型を定義するもの
+
+### バリデーターとトランスフォーマーのサードパーティライブラリを使用
+
+npm i --save class-validator class-transformer
