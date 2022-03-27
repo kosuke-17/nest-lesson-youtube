@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { CreateUserDto } from './dto/create-user.dto';
 import { Model } from 'mongoose';
@@ -20,11 +20,17 @@ export class UsersService {
   }
   // ユーザー一覧の取得
   async findAll() {
-    return await this.userModel.find({});
+    // findメソッドはawaitで受け取れないので、execがあると良いらしい(非同期になる)
+    return await this.userModel.find({}).exec();
   }
   // 特定のユーザー情報の取得
   async findOne(username: string) {
-    const user = await this.userModel.findOne({ username });
+    // findメソッドはawaitで受け取れないので、execがあると良いらしい(非同期になる)
+    const user = await this.userModel.findOne({ username }).exec();
+    if (!user) {
+      // nestjsで用意されているエラーをきれいに返してくれるオブジェクト
+      throw new NotFoundException('ユーザーが見つかりませんでした');
+    }
     return user;
   }
 }
