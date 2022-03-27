@@ -8,8 +8,6 @@ export class AuthController {
 
   @Post('login')
   create(@Body(ValidationPipe) createUser: CreateUserDto) {
-    console.log('ログイン開始');
-
     return this.authService.login(createUser);
   }
 }
