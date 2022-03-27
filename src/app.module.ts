@@ -9,7 +9,7 @@ import { UsersModule } from './users/users.module';
   imports: [
     UsersModule,
     MongooseModule.forRoot(
-      'mongodb+srv://admin:admin123@cluster0.jjn60.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+      '削除済み',
     ),
   ],
   // リクエスト(url)が来た時に何を返すかを決める
