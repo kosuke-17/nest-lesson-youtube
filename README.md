@@ -33,3 +33,12 @@ npm i --save class-validator class-transformer
 
 npm i mongoose @nestjs/mongoose
 npm i -D @types/mongoose
+
+## jwt を利用するためのライブラリ
+
+npm i @nestjs/jwt
+
+## パスワードをハッシュ化するライブラリ
+
+npm i bcryptjs
+npm i -D @types/bcryptjs

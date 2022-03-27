@@ -3,6 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 // デコレーター(クラスをデー子レーションする関数)
 @Module({
@@ -11,6 +12,7 @@ import { UsersModule } from './users/users.module';
     MongooseModule.forRoot(
       'mongodb+srv://admin:admin123@cluster0.jjn60.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
     ),
+    AuthModule,
   ],
   // リクエスト(url)が来た時に何を返すかを決める
   controllers: [AppController],
