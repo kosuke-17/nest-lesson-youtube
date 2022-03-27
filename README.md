@@ -32,3 +32,4 @@ npm i --save class-validator class-transformer
 ## mongodb を利用するためのライブラリを導入
 
 npm i mongoose @nestjs/mongoose
+npm i -D @types/mongoose
