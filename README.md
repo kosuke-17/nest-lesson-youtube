@@ -42,3 +42,7 @@ npm i @nestjs/jwt
 
 npm i bcryptjs
 npm i -D @types/bcryptjs
+
+## パスポート.js
+
+npm i @nestjs/passport passport-jwt
